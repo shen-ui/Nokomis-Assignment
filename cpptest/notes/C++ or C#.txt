@@ -1,0 +1,38 @@
+
+
+PROBLEM CONTEXT
+
+	Some points are present on a number line:
+        ( marked by "x" )
+
+        0_._|_._1_._|_._2_._|_._3_._|_._ ...
+        
+         x      xx   x  x    x
+
+	We want to determine which sets of points (if any) exhibit a regular
+	spacing ( e.g. a set of points [2.1, 3.6, 4.1, 6.1, 8.1 ...] has
+    points with a regular spacing of 2.0 ).
+
+PART I
+	
+	Define a data structure to hold a set of points.
+	How would you initialize this data structure?
+	What about file storage?
+	What if points need the ability to have additional attributes?
+
+PART II
+
+	However, we are ultimately uninterested in considering points which
+	are really close together ( e.g. out of points 5.0 and 5.01, only
+    one point should be kept ).
+
+	Assume this data structure has been populated for you.
+	Write an algorithm to accept this data structure and
+	filter points on the basis of some minimum distance.
+
+PART III
+
+	Devise an algorithm to identify whether or not a regular spacing
+	of a given distance exists between 3 or more points in this set
+    ( e.g., the spacing 2.0 exists in the set [3.1, 5.1, 7.1], but a
+    spacing 4.0 does not ).

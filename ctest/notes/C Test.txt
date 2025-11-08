@@ -1,0 +1,38 @@
+
+You need to write a C function to perform some task:
+
+    int do_task( result_t *result )
+    {
+        /* ... */
+    }
+
+This task involves calling do_subtask() on resources A, B, and C, and getting a
+result:
+
+    resource_a_t *this_a;
+    resource_b_t *this_b;
+    resource_c_t *this_c;
+    
+    int do_subtask(
+        resource_a_t    *this_a,
+        resource_b_t    *this_b,
+        resource_c_t    *this_c,
+        result_t        *result
+    );
+
+Within your function, you must acquire A, B, and C using the functions:
+
+    int             acquire_a( resource_a_t **a );
+    resource_b_t *  acquire_b( resource_a_t *a );
+    void            acquire_c( resource_a_t *a, resource_c_t **c, int *ecode );
+
+However, any or all of them may fail, in which case attempting to use the
+respective resource is forbidden.
+
+Before exiting do_task(), you must release any acquired resources:
+
+    void release_a( resource_a_t *a );
+    void release_b( resource_b_t *b );
+    void release_c( resource_c_t *c );
+
+Your function must return 0 on success.
